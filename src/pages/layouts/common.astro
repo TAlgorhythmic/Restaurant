@@ -1,0 +1,31 @@
+---
+const {titol, mainPage} = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <link rel="stylesheet" type="text/css" href="/classes" />
+        <link rel="stylesheet" type="text/css" href="/style" />
+        <link rel="stylesheet" type="text/css" href="/ids" />
+		<title>Restaurant</title>
+	</head>
+	<body>
+        {
+            mainPage ? () => (
+                <header id="header">
+
+                </header>
+            ) : undefined
+        }
+		<h1>{titol}</h1>
+        <slot />
+
+        <footer>
+
+        </footer>
+	</body>
+</html>
