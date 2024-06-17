@@ -1,4 +1,10 @@
 ---
-
+const {titol, img, descripcio, preu} = Astro.props;
 ---
 
+<div class="plat" style="animation: plat-slide 1s forwards">
+    <img class="plat-img" src={img}/>
+    <p class="plat-titol">{titol}</p>
+    <p class="plat-descripcio">{descripcio}</p>
+    <p class="plat-preu">{`$${preu}`}</p>
+</div>

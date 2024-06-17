@@ -1,0 +1,44 @@
+---
+import Common from "../layouts/common.astro";
+import UsuarisController from "../../../public/usuaris";
+
+const COOKIES_ID = "dyst.algorhythmics";
+
+if (Astro.request.method === "POST") {
+    const controlador = new UsuarisController();
+    const data = await Astro.request.formData();
+
+    const email = data.get("email");
+    const password = data.get("password");
+
+    const validat = controlador.validar(email, password);
+
+    if (validat) {
+        Astro.cookies.set(COOKIES_ID, email + ";!|?;" + password);
+        return Astro.redirect('/');
+    } else {
+        return Astro.redirect('/forms/login_error');
+    }
+}
+---
+
+<Common titol="Login" mainPage={false}>
+    <form method="POST" class="center-form">
+        <div class="login-container">
+            <div class="login-subcontainer">
+                <p class="error-text">Error: Credencials no vàlides.</p>
+                <label class="label" for="email">Email</label>
+                <input class="text-input" type="text" name="email" id="email"/>
+
+                <label class="label" for="password">Contrasenya</label>
+                <input class="text-input" type="text" name="password" id="password"/>
+
+                <button id="loginButton" class="submit">Login</button>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</Common>

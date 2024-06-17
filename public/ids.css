@@ -1,5 +1,56 @@
 #header {
     background-image: url('https://media.discordapp.net/attachments/647542543986458673/1248656260505538580/header.webp?ex=66647543&is=666323c3&hm=7daffd56f2e08c9edb78c8f7235eb25fe6e67d4a7b138a6276d89e31c686cb23&=&format=webp&width=1440&height=402');
-    background-size: cover;
+    background-size: auto;
     background-position: center;
+    width: 100%;
+    height: 350px;
+    color: aliceblue
+}
+#header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(240,248,255,1) 100%);
+}
+#reduced-header {
+    background-image: url('https://media.discordapp.net/attachments/647542543986458673/1248656260505538580/header.webp?ex=66647543&is=666323c3&hm=7daffd56f2e08c9edb78c8f7235eb25fe6e67d4a7b138a6276d89e31c686cb23&=&format=webp&width=1440&height=402');
+    background-size: auto;
+    background-position: center;
+    width: 100%;
+    height: 170px;
+    color: aliceblue
+}
+#reduced-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(240,248,255,1) 100%);
+}
+#footer {
+    background-image: url('https://media.discordapp.net/attachments/647542543986458673/1248656260849729676/footer.webp?ex=66647543&is=666323c3&hm=5eb901927a4cee1c2327bc4446448d6975d8e2c388dc2e4b7216c5181c91c70b&=&format=webp&width=1440&height=408');
+    background-size: auto;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#footer-layer {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(240,248,255,1) 100%);
 }

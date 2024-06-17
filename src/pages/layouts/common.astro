@@ -1,5 +1,6 @@
 ---
 const {titol, mainPage} = Astro.props;
+import Icon from "./icon.astro";
 ---
 
 <html lang="en">
@@ -8,24 +9,35 @@ const {titol, mainPage} = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" type="text/css" href="/classes" />
-        <link rel="stylesheet" type="text/css" href="/style" />
-        <link rel="stylesheet" type="text/css" href="/ids" />
+        <link rel="stylesheet" href="/classes.css" />
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/ids.css" />
 		<title>Restaurant</title>
 	</head>
 	<body>
         {
             mainPage ? () => (
                 <header id="header">
-
+                    <div class="max flex row left-animate">
+                        <p class="slogan">eslògan de la pàgina, el que sigui</p>
+                    </div>
                 </header>
-            ) : undefined
+            ) : () => (
+                <header id="reduced-header">
+                    
+                </header>
+            )
         }
-		<h1>{titol}</h1>
-        <slot />
-
-        <footer>
-
+        <Icon />
+		<h1 class="center">{titol}</h1>
+        <slot />    
+        
+        <footer id="footer">
+            <div class="footer-layer">
+                <p class="footer-item" style="margin-top: 95px;">Tlf: 633689275</p>
+                <p class="footer-item">Email: dadas@asdads.com</p>
+            </div>
         </footer>
+        
 	</body>
 </html>

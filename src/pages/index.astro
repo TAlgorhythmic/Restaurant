@@ -1,7 +1,31 @@
 ---
 import Common from "./layouts/common.astro"
+import Plat from "./layouts/plat.astro"
+import PlatController from "./../../public/platcontrolador.js";
+
+const platsCtrl = new PlatController();
+const allPlats = await platsCtrl.getAll();
 ---
 
-<Common titol="Restaurant">
-
+<Common titol="Restaurant" mainPage={true}>
+	<h1 class="plats-titol">Plats</h1>
+	<div class="plats-container">
+		{
+			allPlats.list.map(plat => (
+				<Plat titol={plat.titol} img={plat.foto[0].signedUrl} descripcio={plat.descripcio} preu={plat.preu} />
+			))
+		}
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </Common>
